@@ -1,0 +1,60 @@
+{
+  "private": true,
+  "main": "src/main/main.js",
+  "name": "electron-ide",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "start:renderer": "cross-env APP_ROOT=src/renderer umi dev",
+    "start:main": "electron src/main/main.js",
+    "build:main": "electron-builder --win --x64",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "rebuild": "electron-rebuild -f -w node-pty"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.3.0",
+    "@ant-design/pro-layout": "^6.5.0",
+    "ahooks": "^2.8.1",
+    "antd": "^4.9.4",
+    "lodash": "^4.17.20",
+    "monaco-editor": "^0.21.2",
+    "node-pty": "^0.10.0-beta18",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-monaco-editor": "^0.41.2",
+    "umi": "^3.3.2",
+    "xterm": "^4.9.0",
+    "xterm-addon-fit": "^0.4.0",
+    "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "@umijs/fabric": "^2.3.1",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.3.2",
+    "cross-env": "^7.0.2",
+    "electron": "^11.1.0",
+    "electron-builder": "^22.9.1",
+    "electron-rebuild": "^2.3.4",
+    "eslint": "^7.11.0",
+    "lint-staged": "^10.0.7",
+    "monaco-editor-webpack-plugin": "^2.1.0",
+    "prettier": "^2.1.1",
+    "stylelint": "^13.7.0",
+    "typescript": "^4.0.0"
+  }
+}

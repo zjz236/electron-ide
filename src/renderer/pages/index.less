@@ -1,0 +1,63 @@
+
+.page-home {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+
+  .file-tree {
+    width: 300px;
+    height: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e8e8e8;
+
+    .file-tree-title {
+      font-size: 15px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      background: #eee;
+      color: #000;
+      flex: 0 0 auto;
+      border-bottom: 1px solid #e8e8e8;
+
+      .anticon {
+        margin-right: 5px;
+      }
+    }
+
+    .file-tree-content {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+
+  .empty-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .tabs {
+      flex: 1;
+
+      .ant-tabs-bar {
+        margin: 0;
+      }
+    }
+
+    .main-terminal {
+      flex: 0 0 auto;
+      height: 250px;
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+}
